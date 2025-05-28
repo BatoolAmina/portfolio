@@ -1,0 +1,378 @@
+/* Basic Reset */
+:root {
+    --card-bg-light: #1e1e1e;
+    --card-text-light: #f9f9f9;
+    --card-bg-dark: #f9f9f9;
+    --card-text-dark:#1e1e1e;
+}
+
+/* Set theme-aware colors */
+body.light-mode {
+    --bg-color: #ffffff;
+    --card-bg: var(--card-bg-light);
+    --card-text: var(--card-text-light);
+}
+
+body.dark-mode {
+    --bg-color: #121212;
+    --card-bg: var(--card-bg-dark);
+    --card-text: var(--card-text-dark); 
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    padding-top: 70px;
+    font-family: 'Roboto', sans-serif;
+    transition: background-color 0.3s, color 0.3s;
+    padding: 0 20px;
+}
+
+/* Light and Dark Mode Styling */
+body.light-mode {
+    background-color: #fff;
+    color: #333;
+}
+
+body.dark-mode {
+    background-color: #121212;
+    color: #fff;
+}
+
+a, button {
+    text-decoration: none; /* Removing underlines from links */
+    cursor: pointer;
+}
+
+/* Navbar */
+/* Navbar Styling */
+.navbar {
+    margin: 0 0 0 0;
+    position: fixed;
+    width: 100%;
+    padding: 20px 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    top: 0;
+    background-color: var(--bg-color); /* Solid background based on mode */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: inherit;
+    font-family: 'Poppins', sans-serif;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+
+/* Base Nav Link Style */
+.nav-links li a {
+    font-size: 1rem;
+    color: #8e44ad; /* Elegant purple */
+    transition: color 0.3s ease;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+/* Dark Mode Variant */
+body.dark-mode .nav-links li a {
+    color: #d39cff; /* Softer lilac purple */
+}
+
+/* Hover State */
+.nav-links li a:hover {
+    color: #00bcd4; /* Aqua blue hover effect */
+}
+
+/* Optional: Active link (when you want to highlight current section) */
+.nav-links li a.active {
+    color: #ff6b6b;
+    border-bottom: 2px solid #ff6b6b;
+    padding-bottom: 2px;
+}
+
+
+.mode-toggle {
+    background: none;
+    border: none;
+    font-size: 1.4rem;
+    cursor: pointer;
+    color: inherit;
+    transition: transform 0.2s ease;
+}
+
+.mode-toggle:hover {
+    transform: scale(1.2);
+}
+
+/* Responsive Nav (optional burger later) */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none; /* For now, we'll keep it desktop only */
+    }
+}
+
+
+/* Homepage */
+.home {
+    text-align: center;
+    margin-top: 120px;
+}
+
+.home h2 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    animation: fadeIn 1s ease-out;
+}
+
+.home p {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    animation: fadeIn 1.5s ease-out;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Projects */
+.projects {
+    margin-top: 60px;
+    text-align: center;
+}
+
+.projects h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    animation: fadeIn 2s ease-out;
+}
+
+.project-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.project-card {
+    background: var(--card-bg); /* Uses theme-aware background */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    animation: fadeIn 2.5s ease-out;
+    color: var(--card-text); /* Ensures text color adapts to theme */
+}
+
+
+.project-card:hover {
+    transform: translateY(-10px);
+}
+
+.project-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.project-card p {
+    font-size: 1rem;
+}
+
+/* About Me */
+.about {
+    text-align: center;
+    margin-top: 60px;
+}
+
+.about h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.about-box {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: left;
+    padding: 30px;
+    background-color: var(--card-bg); /* Adapts to light/dark mode */
+    border-radius: 10px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+.about-box p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 15px;
+    color: var(--card-text);
+}
+
+.about-box strong {
+    //* Highlight name and role */
+}
+
+.social-links {
+    margin-top: 20px;
+}
+
+/* Custom Link Colors */
+.social-icon {
+    padding: 12px 20px;
+    margin: 10px;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.social-icon.linkedin {
+    background-color: #0077b5;
+    color: white;
+}
+
+.social-icon.github {
+    background-color: #333;
+    color: white;
+}
+
+.social-icon:hover {
+    background-color: #1a73e8;  /* Bright blue for hover effect */
+    color: #fff;
+}
+
+/* Resume Button */
+.resume-btn {
+    display: inline-block;
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    text-align: center;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    margin-top: 40px;
+    transition: background-color 0.3s ease;
+}
+
+.resume-btn:hover {
+    background-color: #45a049;
+}
+
+/* Contact Form */
+.contact {
+    margin-top: 60px;
+    text-align: center;
+}
+
+.contact h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.contact form {
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contact input, .contact textarea {
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.contact button {
+    padding: 12px 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.contact button:hover {
+    background-color: #0056b3;
+}
+
+.footer {
+    background-color: var(--bg-color);
+    padding: 25px 20px;
+    text-align: center;
+    border-top: 1px solid rgba(0,0,0,0.1);
+    margin-top: 60px;
+    font-size: 0.9rem;
+}
+
+.footer-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+}
+
+.footer p {
+    margin: 0;
+    flex: 1 1 250px;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .footer-container {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .project-cards {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .project-card {
+        padding: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .project-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .home h2 {
+        font-size: 2.5rem;
+    }
+
+    .home p {
+        font-size: 1rem;
+    }
+}
